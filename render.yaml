@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: craving-sizzle-strapi
+    name: craving-sizzle-strapicms
     env: node
     plan: starter
     buildCommand: yarn install && yarn build
@@ -20,7 +20,7 @@ services:
         sync: false
       - key: DATABASE_URL
         fromDatabase:
-          name: craving-sizzle-db
+          name: craving-sizzle-database
           property: connectionString
       - key: JWT_SECRET
         generateValue: true
@@ -30,6 +30,6 @@ services:
         generateValue: true
 
 databases:
-  - name: craving-sizzle-db
+  - name: craving-sizzle-database
     plan: basic-256mb
     diskSizeGB: 1
